@@ -36,8 +36,12 @@ before_install:
   - sudo mv docker-compose /usr/local/bin
   - docker --version
   - docker-compose --version
+
   - sudo mkdir vendor
   - sudo chmod 777 vendor
+
+  - sudo mkdir bin
+  - sudo chmod 777 bin
 
 script:
   # The test run is included in the docker-entrypoint-tests.sh file.
