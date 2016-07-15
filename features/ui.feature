@@ -5,6 +5,7 @@ Feature: Aegir UI
 
   @api
   Scenario: Log in and poke around.
+    Given I fail the test
     Given I am on the homepage
     Then I should see "Access denied. You must log in to view this page."
     # When I run drush "@hostmaster hosting-tasks"
