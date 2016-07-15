@@ -23,5 +23,9 @@ services:
 
   database:
     image: mariadb
+
+    # Disable logging for this container, for testing environment.
+    logging:
+      driver: "none"
     environment:
       MYSQL_ROOT_PASSWORD: strongpassword
