@@ -16,7 +16,7 @@ services:
     environment:
       VIRTUAL_HOST: aegir.docker
       MYSQL_ROOT_PASSWORD: strongpassword
-      AEGIR_MAKEFILE: /var/aegir/hostmaster-source/build-hostmaster.make
+      AEGIR_MAKEFILE: /var/aegir/tests/travis/build-hostmaster-local.make
     tty: true
     stdin_open: true
     volumes:
