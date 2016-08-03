@@ -5,6 +5,6 @@ Feature: Legacy Tests
 
   @api
   Scenario: Run legacy tests.
-    Given I run the drush command "drush -y @hostmaster provision-tests-run"
+    Given I run drush "@hostmaster provision-tests-run -y"
     Then print last drush output
     Then drush output should contain "success"
