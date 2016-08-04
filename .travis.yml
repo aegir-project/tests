@@ -6,6 +6,7 @@ env:
   globaL:
     - DOCKER_VERSION=1.11.2-0~trusty
     - DOCKER_COMPOSE_VERSION=1.7.1
+    - COMPOSE_HTTP_TIMEOUT=3600
 
 #env:
 #  - test: Ubuntu 14.04 Apache
@@ -49,4 +50,4 @@ before_install:
 
 script:
   # The test run is included in the docker-entrypoint-tests.sh file.
-  - sudo docker-compose up --abort-on-container-exit
+  - sudo docker-compose run hostmaster --rm
