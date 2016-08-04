@@ -46,4 +46,4 @@ before_install:
 
 script:
   # The test run is included in the docker-entrypoint-tests.sh file.
-  - sudo -E docker-compose up --abort-on-container-exit
+  - sudo docker-compose run hostmaster --rm
