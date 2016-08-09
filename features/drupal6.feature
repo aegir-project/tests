@@ -82,3 +82,20 @@ Feature: Host Drupal 6
     And I click "drupal7platform"
     Then I should see "Sites installed on this platform"
     And I should see "drupal6.local.computer"
+
+    When I click "drupal6.local.computer"
+    When I click "Generate a one-time login reset url for this site."
+    And I run drush "hosting-tasks -y"
+    Then print last drush output
+    Then I reload the page
+
+    Given I click "Log in to drupal6.local.computer"
+    # The drupal 7 message!
+    Then I should see "You have just used your one-time login link. It is no longer necessary to use this link to log in. Please change your password."
+
+    Given I click "Administration"
+    Then I click "Reports"
+    Then I click "Status report"
+    Then I click "Status report"
+    Then I should see "7.50"
+
