@@ -10,13 +10,13 @@ Feature: Aegir UI
     # When I run drush "@hostmaster hosting-tasks"
     Then I am logged in as a user with the "administrator" role
     And I am on the homepage
-    And I should see "aegir.docker"
+    And I should see "aegir.local.computer"
     Then I should see "Sites"
     And I should see "Task queue"
 
     # Confirm all tasks verified.
     When I click "Tasks"
-    Then I should see "aegir.docker" in the ".hosting-success" element
+    Then I should see "aegir.local.computer" in the ".hosting-success" element
 
     # Not sure why this fails
     # And I should see "hostmaster" in the ".hosting-success" element
@@ -26,7 +26,7 @@ Feature: Aegir UI
     When I click "Platforms"
     Then I should see "hostmaster"
     Then I should see "drupal"
-    Then I should see "aegir.docker"
+    Then I should see "aegir.local.computer"
 
     # Platforms table
     Then I should see "Platform"
