@@ -21,4 +21,11 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
   public function __construct() {
   }
 
+  /**
+   * @AfterSuite
+   */
+  public static function cleanAegir() {
+    exec('rm -rf /var/aegir/platforms/d6/sites/drupal6.local.computer');
+    print "Removed /var/aegir/platforms/d6/sites/drupal6.local.computer";
+  }
 }
