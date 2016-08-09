@@ -17,7 +17,7 @@ Feature: Host Drupal 6
     And I fill in "Publish path" with "d6"
     When I press "Save"
     Then I should see "Verify task has been queued for platform drupal6platform. It will be available once the task is completed."
-    And I should see "Platform d6 has been created."
+    And I should see "Platform drupal6platform has been created."
     And I should see "/var/aegir/platforms/d6"
     And I should see "drupal6platform"
 
