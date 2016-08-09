@@ -23,15 +23,26 @@ Feature: Host Drupal 6
 
     When I run drush "hosting-tasks -v"
     Then print last drush output
-    When I click "Add Site"
+    Then I reload the page
+    When I click "Add site"
     Then I should see "Create Site"
 
-    When I fill in "Domain Name" with "drupal6.local.computer"
+    When I fill in "Domain name" with "drupal6.local.computer"
     And I select the radio button "drupal6platform"
     Then I press "Save"
     And I should see "Site drupal6.local.computer has been created."
     And I should see "drupal6.local.computer"
+    And I should see "Install"
+    And I should see "Queued"
+    And I should see the link "drupal6platform"
 
+    When I run drush "hosting-tasks -v"
+    Then print last drush output
+    Then I reload the page
+    And I should see "Enabled"
 
+    Given I click "Log in to drupal6.local.computer"
+    Then I should see "You have just used your one-time login link. It is no longer necessary to use this link to login. Please change your password."
+    And I should see the link "drupal6.local.computer"
 
 
