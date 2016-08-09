@@ -76,7 +76,7 @@ Feature: Host Drupal 6
 
     Then I press "Migrate"
 
-    When I run drush "en hosting_migrate -y"
+    When I run drush "hosting-tasks -v"
     Then print last drush output
     Then I reload the page
     And I click "drupal7platform"
