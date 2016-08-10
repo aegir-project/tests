@@ -2,8 +2,8 @@
 
 # Run this script in your .travis.yml file to upgrade docker.
 
-DOCKER_VERSION=1.11.2-0~trusty
-DOCKER_COMPOSE_VERSION=1.7.1
+DOCKER_VERSION=1.12.0-0~trusty
+DOCKER_COMPOSE_VERSION=1.8.0
 
 apt-cache madison docker-engine
 
