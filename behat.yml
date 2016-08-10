@@ -11,7 +11,7 @@ default:
     Behat\MinkExtension:
       goutte: ~
       selenium2: ~
-      base_url: http://aegir.docker
+      base_url: http://aegir.local.computer
     Drupal\DrupalExtension:
       blackbox: ~
       api_driver: 'drush'

@@ -4,8 +4,7 @@ sudo: required
 
 env:
   globaL:
-    - DOCKER_VERSION=1.11.2-0~trusty
-    - DOCKER_COMPOSE_VERSION=1.7.1
+    - COMPOSE_HTTP_TIMEOUT=3600
 
 #env:
 #  - test: Ubuntu 14.04 Apache
@@ -16,26 +15,15 @@ env:
 
 addons:
   hosts:
-    - aegir.travis
-    - sitetest.aegir.travis
+    - aegir.local.computer
+    - sitetest.aegir.local.computer
 
 services:
   - docker
 
 before_install:
-  # list docker-engine versions
-  - apt-cache madison docker-engine
-
-  # upgrade docker-engine to specific version
-  - sudo apt-get -o Dpkg::Options::="--force-confnew" install -y docker-engine=${DOCKER_VERSION}
-
-  # reinstall docker-compose at specific version
-  - sudo rm /usr/local/bin/docker-compose
-  - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
-  - chmod +x docker-compose
-  - sudo mv docker-compose /usr/local/bin
-  - docker --version
-  - docker-compose --version
+  - cd travis
+  - sudo bash prepare-docker.sh
 
   - sudo mkdir vendor
   - sudo chmod 777 vendor
@@ -45,4 +33,4 @@ before_install:
 
 script:
   # The test run is included in the docker-entrypoint-tests.sh file.
-  - sudo docker-compose up --abort-on-container-exit
+  - sudo -E docker-compose -f docker-compose-tests.yml run hostmaster --rm
