@@ -23,7 +23,7 @@ USER_UID=`id -u travis`
 echo "Preparing local aegir container for UID $USER_UID"
 
 # Get Dockerfile
-wget https://raw.githubusercontent.com/aegir-project/dockerfiles/master/Dockerfile
+wget https://raw.githubusercontent.com/aegir-project/dockerfiles/master/Dockerfile-local
 
 # Run Docker build
-docker build --build-arg AEGIR_UID=$USER_UID --build-arg AEGIR_GID=$USER_UID -t aegir/hostmaster:local .
+docker build --build-arg AEGIR_UID=$USER_UID --build-arg AEGIR_GID=$USER_UID -t aegir/hostmaster:local -f Dockerfile-local .
