@@ -8,7 +8,7 @@ DOCKER_COMPOSE_VERSION=1.8.0
 # Use this to get list of versions
 # apt-cache madison docker-engine
 
-apt-get -o Dpkg::Options::="--force-confnew" install -y docker-engine=${DOCKER_VERSION}
+apt-get -o Dpkg::Options::="--force-confnew" install -y docker-engine=${DOCKER_VERSION} -qq
 
 # reinstall docker-compose at specific version
 rm /usr/local/bin/docker-compose
