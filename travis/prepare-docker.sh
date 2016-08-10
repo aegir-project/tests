@@ -18,6 +18,9 @@ mv docker-compose /usr/local/bin
 docker --version
 docker-compose --version
 
+echo "Adding user travis to docker group..."
+usermod -aG docker travis
+
 # Prepare local docker container
 # @TODO: This is really a pain. Travis is always 1000, standard for ubuntu.
 #   I can build a local container locally with the Dockerfile-local, but it's not working on travis.

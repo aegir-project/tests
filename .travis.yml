@@ -34,4 +34,5 @@ before_install:
 script:
   # The test run is included in the docker-entrypoint-tests.sh file.
   - cd travis
-  - sudo docker-compose run hostmaster --rm
+  - newgrp docker
+  - docker-compose run hostmaster --rm
