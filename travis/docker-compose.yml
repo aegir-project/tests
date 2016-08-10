@@ -24,13 +24,13 @@ services:
       - ../:/var/aegir/tests
       - /home/travis/build/aegir-project/hostmaster:/source/hostmaster
       - /home/travis/build/aegir-project/hosting:/source/hosting
-      - /home/travis/build/aegir-project/provision:/var/aegir/.drush/commands/provision
+      - /home/travis/build/aegir-project/provision:/source/provision
 
       # Project code Volumes.
       # Individual projects need to copy their codebase into source/modules, source/themes or source/drush to be included in the images.
-      - /home/travis/build/aegir-project/source/modules:/var/aegir/hostmaster-7.x-3.x/profiles/hostmaster/modules/source
-      - /home/travis/build/aegir-project/source/themes:/var/aegir/hostmaster-7.x-3.x/profiles/hostmaster/themes/source
-      - /home/travis/build/aegir-project/source/drush:/var/aegir/.drush/source
+      - /home/travis/build/aegir-project/source/modules:/source/modules
+      - /home/travis/build/aegir-project/source/themes:/source/themes
+      - /home/travis/build/aegir-project/source/drush:/source/drush
 
   database:
     image: mariadb
