@@ -6,6 +6,7 @@ env:
   globaL:
     - DOCKER_VERSION=1.12.0-0~trusty
     - DOCKER_COMPOSE_VERSION=1.8.0
+    - COMPOSE_HTTP_TIMEOUT=3600
 
 #env:
 #  - test: Ubuntu 14.04 Apache
@@ -16,8 +17,8 @@ env:
 
 addons:
   hosts:
-    - aegir.travis
-    - sitetest.aegir.travis
+    - aegir.local.computer
+    - sitetest.aegir.local.computer
 
 services:
   - docker
@@ -45,4 +46,4 @@ before_install:
 
 script:
   # The test run is included in the docker-entrypoint-tests.sh file.
-  - sudo docker-compose up --abort-on-container-exit
+  - sudo docker-compose run hostmaster --rm
