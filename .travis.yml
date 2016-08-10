@@ -41,13 +41,17 @@ before_install:
   - cd /home/travis/build/aegir-project/hostmaster
   - git checkout $AEGIR_HOSTING_VERSION
 
+  - cd /home/travis/build/aegir-project/tests
   - sudo mkdir vendor
   - sudo chmod 777 vendor
 
   - sudo mkdir bin
   - sudo chmod 777 bin
 
+  - cd /home/travis/build/aegir-project/tests/travis
+
+  - ls -la /home/travis/build/aegir-project/hostmaster
+
 script:
   # The test run is included in the docker-entrypoint-tests.sh file.
-  - cd /home/travis/build/aegir-project/tests/travis
   - sg - docker -c 'docker-compose run hostmaster --rm'
