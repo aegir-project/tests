@@ -4,8 +4,6 @@ sudo: required
 
 env:
   globaL:
-    - DOCKER_VERSION=1.12.0-0~trusty
-    - DOCKER_COMPOSE_VERSION=1.8.0
     - COMPOSE_HTTP_TIMEOUT=3600
 
 #env:
@@ -25,7 +23,7 @@ services:
 
 before_install:
   # upgrade docker-engine to specific version
-  - sudo ./travis/prepare-docker.sh
+  - sudo bash travis/prepare-docker.sh
 
   - sudo mkdir vendor
   - sudo chmod 777 vendor
