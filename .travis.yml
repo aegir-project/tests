@@ -5,6 +5,7 @@ sudo: required
 env:
   globaL:
     - COMPOSE_HTTP_TIMEOUT=3600
+    - AEGIR_HOSTING_VERSION=7.x-3.x
 
 #env:
 #  - test: Ubuntu 14.04 Apache
@@ -24,6 +25,16 @@ services:
 before_install:
   # upgrade docker-engine to specific version
   - sudo bash travis/prepare-docker.sh
+
+  # Get Hosting
+  - git clone http://git.drupal.org/project/hosting.git /home/travis/build/aegir-project/hosting
+  - cd /home/travis/build/aegir-project/hosting
+  - git checkout $AEGIR_HOSTING_VERSION
+
+  # Get Hostmaster
+  - git clone http://git.drupal.org/project/hostmaster.git /home/travis/build/aegir-project/hostmaster
+  - cd /home/travis/build/aegir-project/hostmaster
+  - git checkout $AEGIR_HOSTING_VERSION
 
   - sudo mkdir vendor
   - sudo chmod 777 vendor
