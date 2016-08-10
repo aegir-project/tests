@@ -9,7 +9,7 @@ projects[hostmaster][download][type] = "copy"
 projects[hostmaster][download][url] = "/source/hostmaster"
 
 # Travis docker-compose.yml puts hosting module at /source/hosting
-projects[hosting][type] = "module"
-projects[hosting][subdir] = "aegir"
-projects[hosting][download][type] = "copy"
-projects[hosting][download][url] = "/source/hosting"
+# projects[hosting][type] = "module"
+# projects[hosting][subdir] = "aegir"
+# projects[hosting][download][type] = "copy"
+# projects[hosting][download][url] = "/source/hosting"
