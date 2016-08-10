@@ -24,6 +24,7 @@ services:
       - ../:/var/aegir/tests
       - /home/travis/build/aegir-project/hostmaster:/source/hostmaster
       - /home/travis/build/aegir-project/hosting:/source/hosting
+      - /home/travis/build/aegir-project/provision:/var/aegir/.drush/commands/provision
 
   database:
     image: mariadb
