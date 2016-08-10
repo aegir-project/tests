@@ -26,6 +26,11 @@ before_install:
   # upgrade docker-engine to specific version
   - sudo bash travis/prepare-docker.sh
 
+  # Get Provision
+  - git clone http://git.drupal.org/project/provision.git /home/travis/build/aegir-project/provision
+  - cd /home/travis/build/aegir-project/provision
+  - git checkout $AEGIR_HOSTING_VERSION
+
   # Get Hosting
   - git clone http://git.drupal.org/project/hosting.git /home/travis/build/aegir-project/hosting
   - cd /home/travis/build/aegir-project/hosting
