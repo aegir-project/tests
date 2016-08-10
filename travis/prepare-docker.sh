@@ -19,11 +19,12 @@ docker --version
 docker-compose --version
 
 # Prepare local docker container
-USER_UID=`id -u travis`
-echo "Preparing local aegir container for UID $USER_UID"
+# @TODO: This is really a pain. Travis is always 1000, standard for ubuntu.
+#USER_UID=`id -u travis`
+#echo "Preparing local aegir container for UID $USER_UID"
 
 # Get Dockerfile
 wget https://raw.githubusercontent.com/aegir-project/dockerfiles/master/Dockerfile-local
 
 # Run Docker build
-docker build --build-arg AEGIR_UID=${USER_UID} -t aegir/hostmaster:local -f Dockerfile-local .
+docker build --build-arg AEGIR_UID=1000 -t aegir/hostmaster:local -f Dockerfile-local .
