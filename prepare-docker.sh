@@ -5,6 +5,8 @@
 DOCKER_VERSION=1.11.2-0~trusty
 DOCKER_COMPOSE_VERSION=1.7.1
 
+apt-cache madison docker-engine
+
 apt-get -o Dpkg::Options::="--force-confnew" install -y docker-engine=${DOCKER_VERSION}
 
 # reinstall docker-compose at specific version
