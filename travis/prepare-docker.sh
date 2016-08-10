@@ -19,7 +19,7 @@ docker --version
 docker-compose --version
 
 # Prepare local docker container
-USER_UID=`id -u`
+USER_UID=`id -u travis`
 echo "Preparing local aegir container for UID $USER_UID"
 
 # Get Dockerfile
