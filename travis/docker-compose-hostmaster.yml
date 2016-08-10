@@ -22,7 +22,7 @@ services:
     stdin_open: true
     volumes:
       - ../:/var/aegir/tests
-      - /home/travis/build/aegir-project/hostmaster:/var/aegir/hostmaster-source
+      - /home/travis/build/aegir-project/hostmaster:/source/hostmaster
 
   database:
     image: mariadb
