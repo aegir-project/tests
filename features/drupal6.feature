@@ -9,6 +9,7 @@ Feature: Host Drupal 6
     4. Migrate the site to the drupal7 platform.
 
     Given I am logged in as a user with the "administrator" role
+    Then I should see "Intentional Failure. Build should fail!"
     And I click "Platforms"
     Then I click "Add platform"
 
