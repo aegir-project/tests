@@ -12,15 +12,14 @@ Feature: Aegir UI
     And I am on the homepage
     And I should see "aegir.local.computer"
     Then I should see "Sites"
-    And I should see "Task queue"
+    When I click "aegir.local.computer"
+    Then I should see "Enabled"
 
     # Confirm all tasks verified.
     When I click "Tasks"
-    Then I should see "aegir.local.computer" in the ".hosting-success" element
-
-    # Not sure why this fails
-    # And I should see "hostmaster" in the ".hosting-success" element
-    # And I should see "database" in the ".hosting-success" element
+    Then I should not see a ".hosting-error" element
+# @TODO: We are throwing warnings on migrate to 7.50 because we
+#    Then I should not see a ".hosting-warning" element
 
     # Platforms Page
     When I click "Platforms"
