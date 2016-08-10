@@ -4,11 +4,6 @@ sudo: required
 
 env:
   globaL:
-<<<<<<< HEAD
-=======
-    - DOCKER_VERSION=1.11.2-0~trusty
-    - DOCKER_COMPOSE_VERSION=1.7.1
->>>>>>> b9cff3190624c04173578b1a3f41bec2bf77ee4c
     - COMPOSE_HTTP_TIMEOUT=3600
 
 #env:
