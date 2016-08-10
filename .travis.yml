@@ -44,5 +44,5 @@ before_install:
 
 script:
   # The test run is included in the docker-entrypoint-tests.sh file.
-  - cd travis
+  - cd /home/travis/build/aegir-project/tests/travis
   - sg - docker -c 'docker-compose run hostmaster --rm'
