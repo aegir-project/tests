@@ -3,7 +3,7 @@ version: '2'
 services:
 
   hostmaster:
-    image: aegir/hostmaster
+    image: aegir/hostmaster:local
     ports:
       - 80:80
     hostname: aegir.local.computer

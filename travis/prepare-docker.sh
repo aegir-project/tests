@@ -16,3 +16,12 @@ chmod +x docker-compose
 mv docker-compose /usr/local/bin
 docker --version
 docker-compose --version
+
+# Prepare local docker container
+echo "Preparing local aegir container for UID $USER_UID"
+
+# Get Dockerfile
+wget https://raw.githubusercontent.com/aegir-project/dockerfiles/master/Dockerfile
+
+# Run Docker build
+docker build --build-arg AEGIR_UID=$USER_UID --build-arg AEGIR_GID=$USER_UID -t aegir/hostmaster:local .
