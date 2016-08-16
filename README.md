@@ -27,4 +27,4 @@ The test status of each repository is listed below.  <em>This does not reflect t
 
 Test runs currently happen on Travis-ci.org.
 
-You can see an overview of all projects at (travis-ci.org/aegir-project)[https://travis-ci.org/aegir-project].
+You can see an overview of all projects at [travis-ci.org/aegir-project](https://travis-ci.org/aegir-project).
