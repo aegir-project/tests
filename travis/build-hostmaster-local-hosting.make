@@ -3,11 +3,12 @@ api = 2
 
 projects[drupal][type] = "core"
 
-# Travis docker-compose.yml puts hosting module at /source/hostmaster
+# Load 3.x branch of hostmaster.
 projects[hostmaster][type] = "profile"
-projects[hostmaster][version] = "7.x-3.x"
+projects[hostmaster][version] = "3.x"
 
-# Travis docker-compose.yml puts hosting module at /source/hosting
+# Override source of hosting module download.
+# Travis docker-compose-hosting.yml puts hosting module at /source/hosting
 projects[hosting][type] = "module"
 projects[hosting][subdir] = "aegir"
 projects[hosting][download][type] = "copy"
