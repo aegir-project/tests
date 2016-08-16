@@ -21,3 +21,10 @@ The test status of each repository is listed below.  <em>This does not reflect t
 | Dockerfiles | Docker image definitions. Used for all tests. | [github.com/aegir-project/dockerfiles](https://github.com/aegir-project/dockerfiles) | [![Build Status](https://travis-ci.org/aegir-project/dockerfiles.svg?branch=master)](https://travis-ci.org/aegir-project/dockerfiles) |
 | Tests | Behat tests and Travis tools | [github.com/aegir-project/tests](https://github.com/aegir-project/tests) | [![Build Status](https://travis-ci.org/aegir-project/tests.svg?branch=master)](https://travis-ci.org/aegir-project/tests) |
 | Development Environment | Local docker-based development environment. | [github.com/aegir-project/development](https://github.com/aegir-project/development) | [![Build Status](https://travis-ci.org/aegir-project/development.svg?branch=master)](https://travis-ci.org/aegir-project/development) |
+
+
+## Travis
+
+Test runs currently happen on Travis-ci.org.
+
+You can see an overview of all projects at (travis-ci.org/aegir-project)[https://travis-ci.org/aegir-project].
