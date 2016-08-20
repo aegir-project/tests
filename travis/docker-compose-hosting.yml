@@ -23,6 +23,7 @@ services:
     volumes:
       - ../:/var/aegir/tests
       - /home/travis/build/aegir-project/hosting:/source/hosting
+      - /home/travis/build/aegir-project/provision:/source/provision
 
   database:
     image: mariadb
