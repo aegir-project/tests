@@ -32,5 +32,6 @@ before_install:
   - sudo chmod 777 bin
 
 script:
+
   # The test run is included in the docker-entrypoint-tests.sh file.
   - sudo -E docker-compose -f docker-compose-tests.yml run hostmaster --rm
