@@ -4,6 +4,8 @@ services:
 
   hostmaster:
     image: aegir/hostmaster:test
+    command:
+      - run-tests.sh
     ports:
       - 80:80
     hostname: aegir.local.computer
