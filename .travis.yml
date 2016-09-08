@@ -33,4 +33,4 @@ before_install:
 
 script:
   # The test run is included in the docker-entrypoint-tests.sh file.
-  - sudo -E docker-compose -f docker-compose-tests.yml run hostmaster --rm
+  - sudo -E docker-compose -f docker-compose-tests.yml run hostmaster
