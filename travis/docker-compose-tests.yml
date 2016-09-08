@@ -4,6 +4,8 @@ services:
 
   hostmaster:
     image: aegir/hostmaster
+    command:
+      - run-tests.sh
     ports:
       - 80:80
     hostname: aegir.local.computer
@@ -11,9 +13,6 @@ services:
       - database
     depends_on:
       - database
-    entrypoint:
-    # See https://github.com/aegir-project/dockerfiles/blob/master/docker-entrypoint-tests.sh
-      - docker-entrypoint-tests.sh
     environment:
       VIRTUAL_HOST: aegir.local.computer
       MYSQL_ROOT_PASSWORD: strongpassword
