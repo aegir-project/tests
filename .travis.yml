@@ -22,14 +22,15 @@ services:
   - docker
 
 before_install:
-  - cd travis
-  - sudo bash prepare-docker.sh
 
   - sudo mkdir vendor
   - sudo chmod 777 vendor
 
   - sudo mkdir bin
   - sudo chmod 777 bin
+
+  - cd travis
+  - sudo bash prepare-docker.sh
 
 script:
   # The test run is included in the docker-entrypoint-tests.sh file.
