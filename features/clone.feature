@@ -34,7 +34,7 @@ Feature: Clone a website.
     When I fill in "Domain name" with "clonetestsite.aegir.local.computer"
     And I select the radio button "clonetestplatforma"
     Then I press "Save"
-    Then print last response
+    Then I should not see "The domain name you have specified is already in use."
     And I should see "Site clonetestsite.aegir.local.computer has been created."
     And I should see "clonetestsite.aegir.local.computer"
     And I should see "Install"
