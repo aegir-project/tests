@@ -31,11 +31,11 @@ Feature: Clone a website.
     When I click "Add site"
     Then I should see "Create Site"
 
-    When I fill in "Domain name" with "CloneTestSite.local.computer"
+    When I fill in "Domain name" with "clonetestsite.local.computer"
     And I select the radio button "clonetestplatforma"
     Then I press "Save"
-    And I should see "Site CloneTestSite.local.computer has been created."
-    And I should see "CloneTestSite.local.computer"
+    And I should see "Site clonetestsite.local.computer has been created."
+    And I should see "clonetestsite.local.computer"
     And I should see "Install"
     And I should see "Queued"
     And I should see the link "clonetestplatforma"
@@ -45,9 +45,9 @@ Feature: Clone a website.
     Then I reload the page
     And I should see "Enabled"
 
-    Given I click "Log in to CloneTestSite.local.computer"
+    Given I click "Log in to clonetestsite.local.computer"
     Then I should see "You have just used your one-time login link. It is no longer necessary to use this link to login. Please change your password."
-    And I should see the link "CloneTestSite.local.computer"
+    And I should see the link "clonetestsite.local.computer"
 
     # Setup second Drupal 7 platform
     Given I am on the homepage
@@ -69,7 +69,7 @@ Feature: Clone a website.
     Then I should see "Enabled"
 
     Then I click "Sites"
-    And I click "CloneTestSite.local.computer"
+    And I click "clonetestsite.local.computer"
 
     # Enable clone module and Clone the site
     Given I run drush "en hosting_clone -y"
@@ -77,7 +77,7 @@ Feature: Clone a website.
     Then I reload the page
     Then I click "Make a copy of the site."
     Then I select the radio button with the label "clonetestplatformb"
-    And fill in "CloneTestClonedSite.local.computer" for "Domain name"
+    And fill in "clonetestclonedsite.local.computer" for "Domain name"
 
     Then I press "Clone"
 
@@ -86,15 +86,15 @@ Feature: Clone a website.
     Then I reload the page
     And I click "clonetestplatformb"
     Then I should see "Sites installed on this platform"
-    And I should see "CloneTestClonedSite.local.computer"
+    And I should see "clonetestclonedsite.local.computer"
 
-    When I click "CloneTestClonedSite.local.computer"
+    When I click "clonetestclonedsite.local.computer"
     When I click "Generate a one-time login reset url for this site."
     And I run drush "hosting-tasks -y"
     Then print last drush output
     Then I reload the page
 
-    Given I click "Log in to CloneTestClonedSite.local.computer"
+    Given I click "Log in to clonetestclonedsite.local.computer"
     # The drupal 7 message!
     Then I should see "You have just used your one-time login link. It is no longer necessary to use this link to log in. Please change your password."
 
