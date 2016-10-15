@@ -31,12 +31,12 @@ Feature: Clone a website.
     When I click "Add site"
     Then I should see "Create Site"
 
-    When I fill in "Domain name" with "clonetestsiteA.local.computer"
+    When I fill in "Domain name" with "clonetestsite.aegir.local.computer"
     And I select the radio button "clonetestplatforma"
     Then I press "Save"
     Then print last response
-    And I should see "Site clonetestsiteA.local.computer has been created."
-    And I should see "clonetestsiteA.local.computer"
+    And I should see "Site clonetestsite.aegir.local.computer has been created."
+    And I should see "clonetestsite.aegir.local.computer"
     And I should see "Install"
     And I should see "Queued"
     And I should see the link "clonetestplatforma"
@@ -46,9 +46,9 @@ Feature: Clone a website.
     Then I reload the page
     And I should see "Enabled"
 
-    Given I click "Log in to clonetestsiteA.local.computer"
+    Given I click "Log in to clonetestsite.aegir.local.computer"
     Then I should see "You have just used your one-time login link. It is no longer necessary to use this link to login. Please change your password."
-    And I should see the link "clonetestsiteA.local.computer"
+    And I should see the link "clonetestsite.aegir.local.computer"
 
     # Setup second Drupal 7 platform
     Given I am on the homepage
@@ -70,7 +70,7 @@ Feature: Clone a website.
     Then I should see "Enabled"
 
     Then I click "Sites"
-    And I click "clonetestsiteA.local.computer"
+    And I click "clonetestsite.aegir.local.computer"
 
     # Enable clone module and Clone the site
     Given I run drush "en hosting_clone -y"
