@@ -34,6 +34,7 @@ Feature: Clone a website.
     When I fill in "Domain name" with "clonetestsite.local.computer"
     And I select the radio button "clonetestplatforma"
     Then I press "Save"
+    Then print last response
     And I should see "Site clonetestsite.local.computer has been created."
     And I should see "clonetestsite.local.computer"
     And I should see "Install"
