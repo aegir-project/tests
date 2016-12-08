@@ -97,4 +97,4 @@ Feature: Host Drupal 6
     Then I click "Reports"
     Then I click "Status report"
     Then I click "Status report"
-    Then I should see "7.52"
+    Then I should see "7.53"
