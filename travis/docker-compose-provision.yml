@@ -4,6 +4,7 @@ services:
 
   hostmaster:
     image: aegir/hostmaster
+    privileged: true
     ports:
       - 80:80
     hostname: aegir.local.computer

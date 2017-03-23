@@ -4,6 +4,7 @@ services:
 
   hostmaster:
     image: aegir/hostmaster
+    privileged: true
     command:
       - run-tests.sh
     ports:
