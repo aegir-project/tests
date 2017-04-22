@@ -25,6 +25,8 @@ The test status of each repository is listed below.  <em>This does not reflect t
 
 ## Travis
 
-Test runs currently happen on Travis-ci.org.
+Test runs currently happen on Travis-ci.org (custom install and Behat) and GitLab CI (Debian packages).
 
-You can see an overview of all projects at [travis-ci.org/aegir-project](https://travis-ci.org/aegir-project).
+You can see an overview of all Travis projects at [travis-ci.org/aegir-project](https://travis-ci.org/aegir-project).
+
+An over view of tests on GitLab can be found on [their pipelines page](https://gitlab.com/aegir/provision/pipelines)
