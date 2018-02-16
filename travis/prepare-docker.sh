@@ -3,7 +3,7 @@
 # Run this script in your .travis.yml file to upgrade docker.
 # Docker is now 1.12.0 by default on Travis.
 # DOCKER_VERSION=1.12.0-0~trusty
-DOCKER_COMPOSE_VERSION=1.8.0
+DOCKER_COMPOSE_VERSION=1.16.1
 
 # Use this to get list of versions
 # apt-cache madison docker-engine
