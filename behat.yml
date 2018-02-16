@@ -14,6 +14,6 @@ default:
       base_url: http://aegir.local.computer
     Drupal\DrupalExtension:
       blackbox: ~
-      api_driver: 'drush'
+      api_driver: 'drupal'
       drush:
         alias: '@hostmaster'
