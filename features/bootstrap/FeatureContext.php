@@ -1,15 +1,54 @@
 <?php
 
-use Drupal\DrupalExtension\Context\RawDrupalContext;
+use Drupal\DrupalExtension\Context\DrushContext;
 use Behat\Behat\Context\SnippetAcceptingContext;
 use Behat\Gherkin\Node\PyStringNode;
 use Behat\Gherkin\Node\TableNode;
 use Behat\Behat\Tester\Exception\PendingException;
+use Behat\Behat\Hook\Scope\BeforeScenarioScope;
 
 /**
  * Defines application features from the specific context.
  */
-class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext {
+class FeatureContext extends DrushContext implements SnippetAcceptingContext {
+
+
+  /**
+   * Make MinkContext available.
+   * @var \Drupal\DrupalExtension\Context\MinkContext
+   */
+  private $minkContext;
+
+  /**
+   * Prepare Contexts.
+   * @BeforeScenario
+   */
+  public function gatherContexts(BeforeScenarioScope $scope)
+  {
+    $environment = $scope->getEnvironment();
+    $this->minkContext = $environment->getContext('Drupal\DrupalExtension\Context\MinkContext');
+  }
+
+  /**
+   * Log output and watchdog logs after any failed step.
+   * @AfterStep
+   */
+  public function logAfterFailedStep($event)
+  {
+    if ($event->getTestResult()->getResultCode() === \Behat\Testwork\Tester\Result\TestResult::FAILED) {
+
+      // Print Current URL and Last reponse after any step failure.
+      echo "Step Failed.";
+
+      echo "\nLasts Response:\n";
+      $this->minkContext->printLastResponse();
+
+      echo "\nWatchdog Errors:\n";
+      $this->assertDrushCommand('wd-show');
+      $this->printLastDrushOutput();
+
+    }
+  }
 
   /**
    * Initializes context.
