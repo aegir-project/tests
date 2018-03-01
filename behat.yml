@@ -14,6 +14,9 @@ default:
       base_url: http://aegir.local.computer
     Drupal\DrupalExtension:
       blackbox: ~
-      api_driver: 'drush'
+      api_driver: 'drupal'
+      drupal:
+        # We do not include root here because then we cannot override it on the command line.
+        # drupal_root: /var/aegir/hostmaster-7.x-1.x
       drush:
         alias: '@hostmaster'
