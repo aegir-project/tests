@@ -16,7 +16,10 @@ default:
       blackbox: ~
       api_driver: 'drupal'
       drupal:
-        # We do not include root here because then we cannot override it on the command line.
-        # drupal_root: /var/aegir/hostmaster-7.x-1.x
+
+        # This should eventually be un-hardcoded and put into the script triggering the tests, currently https://github.com/aegir-project/dockerfiles/blob/master/run-tests.sh
+        # Aegir needs a Robofile or a CLI command for running tests, so this is more automated.
+        # See https://github.com/opendevshop/devshop/blob/1.x/src/DevShop/Command/DevmasterTest.php#L45
+        drupal_root: /var/aegir/hostmaster
       drush:
         alias: '@hostmaster'
